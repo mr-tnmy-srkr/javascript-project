@@ -8,19 +8,27 @@ function checkInternetConnection() {
   statusText.innerText = "Checking...";
   ipAddressText.innerText = "Checking...";
   networkStrengthText.innerText = "Checking...";
-  console.log(navigator.onLine);
+
   if (navigator.onLine) {
+    const fetchIp = async () => {
+      try {
+        const response = await fetch("https://api.ipify.org?format=json");
+        const data = response.json();
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     fetch("https://api.ipify.org?format=json")
       .then((res) => res.json())
       .then((data) => {
         ipAddressText.innerText = data.ip;
         statusText.innerText = "Connected ✅";
-        const connection = navigator.connection;
-        const networkStrength = connection
-          ? connection.downlink + "Mbps"
-          : "Unknown";
         internetStatusText.innerHTML = "You are Online 🟢";
-        networkStrengthText.innerText = networkStrength;
+        networkStrengthText.innerText = navigator.connection
+          ? navigator.connection.downlink + " Mbps"
+          : "unknown";
       });
   } else {
     internetStatusText.innerHTML = "You are Offline 🔴";
@@ -28,6 +36,10 @@ function checkInternetConnection() {
     ipAddressText.textContent = "-";
     networkStrengthText.textContent = "-";
   }
+}
+
+function refreshInternetConnection() {
+  checkInternetConnection();
 }
 
 window.addEventListener("load", checkInternetConnection);
