@@ -8,3 +8,6 @@ https://palindrome-checker-with-js.surge.sh/
 
 rgb-color-generator : 
 https://rbg-color-generator.surge.sh
+
+random-color-generator : 
+https://randomly-color-generator.surge.sh/
