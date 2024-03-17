@@ -11,3 +11,6 @@ https://rbg-color-generator.surge.sh
 
 random-color-generator : 
 https://randomly-color-generator.surge.sh/
+
+bmi-calculator : 
+https://bmi-calculator-with-js.surge.sh
