@@ -1,6 +1,6 @@
 const containerE1 = document.querySelector(".container");
 
-for (let index = 0; index < 500; index++) {
+for (let index = 0; index < 50; index++) {
   const colorContainerEl = document.createElement("div");
   colorContainerEl.classList.add("color-container");
 
@@ -59,7 +59,6 @@ function copyToClipBoard(text) {
     });
 }
 
-console.log(colorContainerEls);
 colorContainerEls.forEach((colorContainerEl) => {
   const copyButtonEl = colorContainerEl.querySelector("button");
   const colorCodeEl = colorContainerEl.querySelector(".color-code");
