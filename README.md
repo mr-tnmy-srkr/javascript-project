@@ -14,3 +14,6 @@ https://randomly-color-generator.surge.sh/
 
 bmi-calculator : 
 https://bmi-calculator-with-js.surge.sh
+
+love-calculator : 
+https://love-percentage-calculator.surge.sh
