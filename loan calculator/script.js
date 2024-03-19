@@ -7,8 +7,18 @@ function calculateLoan() {
   );
   const loanTerm = parseFloat(document.getElementById("loanTermInput").value);
 
-  if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm)) {
-    showError("Please enter Valid Numbers for all fields");
+  if (isNaN(loanAmount) || loanAmount <= 0) {
+    showError("Please enter a valid Loan Amount.");
+    return;
+  }
+
+  if (isNaN(interestRate) || interestRate <= 0) {
+    showError("Please enter a valid Interest Rate.");
+    return;
+  }
+
+  if (isNaN(loanTerm) || loanTerm <= 0) {
+    showError("Please enter a valid Loan Term (in months).");
     return;
   }
 
@@ -23,12 +33,22 @@ function calculateLoan() {
 }
 
 function displayResult(monthlyPayment, totalInterest) {
+  const loanAmount = parseFloat(
+    document.getElementById("loanAmountInput").value
+  );
   const resultDiv = document.getElementById("result");
+  const totalPayment = totalInterest + loanAmount;
 
+  console.log(totalPayment);
   resultDiv.innerHTML = `
-        <p><strong>Monthly Payment : ${monthlyPayment.toFixed(2)}</strong></p>
-        <p><strong>Total Interest : ${totalInterest.toFixed(2)}</strong></p>
-
+        <p><strong>Monthly Payable : Rs.${monthlyPayment.toFixed(
+          2
+        )}</strong></p>
+        <p><strong>Total Interest Payable : Rs.${totalInterest.toFixed(
+          2
+        )}</strong></p>
+        <p><strong>Total Payable
+        (Loan Amount + Interest) : Rs.${totalPayment.toFixed(2)}</strong></p>
     `;
 }
 
