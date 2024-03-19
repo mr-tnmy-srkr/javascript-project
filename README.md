@@ -17,3 +17,6 @@ https://bmi-calculator-with-js.surge.sh
 
 love-calculator : 
 https://love-percentage-calculator.surge.sh
+
+loan-calculator : 
+https://loan-calculator-raw-js.surge.sh
