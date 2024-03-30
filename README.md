@@ -20,3 +20,6 @@ https://love-percentage-calculator.surge.sh
 
 loan-calculator : 
 https://loan-calculator-raw-js.surge.sh
+
+simon-says-game : 
+https://simon-says-game.surge.sh
